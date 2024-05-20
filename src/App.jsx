@@ -27,6 +27,8 @@ export default function App() {
         <h3>결과</h3>
         <p>{number}</p>
       </div>
+      <hr />
+      <div>완료</div>
     </div>
   );
 }
