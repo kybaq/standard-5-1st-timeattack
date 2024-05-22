@@ -6,21 +6,21 @@ export default function App() {
   const initialState = [
     {
       id: Date.now(),
-      title: "Test1",
-      content: "1",
+      title: "할 일",
+      content: "자기",
       isDone: false,
     },
     {
-      id: Date.now(),
-      title: "Test2",
-      content: "2",
+      id: Date.now() + 1,
+      title: "할 일",
+      content: "일어나기",
       isDone: true,
     },
   ];
 
   const [toDos, setToDos] = useState(initialState);
 
-  const workingToDos = toDos.filter((toDo) => toDo.isDone === false);
+  const workingToDos = toDos.filter((toDo) => toDo.isDone !== true);
   const doneToDos = toDos.filter((toDo) => toDo.isDone === true);
 
   return (
@@ -33,7 +33,11 @@ export default function App() {
         toDos={workingToDos}
         setToDos={setToDos}
       />
-      <TodoList listTitle="Done!" toDos={doneToDos} setToDos={setToDos} />
+      <TodoList
+        listTitle="Done! Great!"
+        toDos={doneToDos}
+        setToDos={setToDos}
+      />
     </>
   );
 }

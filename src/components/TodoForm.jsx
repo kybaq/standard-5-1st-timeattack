@@ -7,7 +7,10 @@ export default function TodoForm({ setToDos }) {
   const onSubmit = (evt) => {
     evt.preventDefault();
 
-    if (!title || !content) alert("빈 칸을 모두 채워주세요.");
+    if (!title || !content) {
+      alert("빈 칸을 모두 채워주세요.");
+      return;
+    }
 
     const nextToDo = {
       id: Date.now(),
